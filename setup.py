@@ -1,11 +1,12 @@
 from setuptools import find_packages, setup
 from typing import List
 
-def get_requirements(file_path:str) -> List[str]:
-    with open(file_path) as f:
-        requirements = f.readlines()
-    requirements = [req.strip() for req in requirements if req.strip() and not req.startswith('#')]
-    return requirements
+def get_requirements(file_path:str)-> List[str]:
+    requirements=[]
+    with open(file_path) as file_obj:
+        ''' This function will return list of requirements'''
+        requirements = file_obj.readlines()
+
 
 setup(
     name='mlProject',
